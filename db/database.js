@@ -14,7 +14,7 @@ class Save {
 
     // Write note file
     write() {
-        return this.write("db/db.json", JSON.stringify(note));
+        return writeFile("db/db.json", JSON.stringify(note));
     }
 
     // Get notes
