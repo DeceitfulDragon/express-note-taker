@@ -5,7 +5,7 @@ var uniqid = require('uniqid');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
-class Save {
+class Database {
 
     // Read note file
     read() {
@@ -19,7 +19,14 @@ class Save {
 
     // Get notes
     getNotes() {
+        return this.read().then((notes) => {
+            let parsedNotes;
 
+            try { parsedNotes.push(JSON.parse(notes)); }
+            catch(err) { parsedNotes = []; }
+            return parsedNotes;
+
+        })
     }
 
     // Add notes
