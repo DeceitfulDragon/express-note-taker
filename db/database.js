@@ -55,4 +55,5 @@ class Database {
 }
 
 // Log notes
-new Database().getNotes().then((notes) => console.log(notes));
+//new Database().getNotes().then((notes) => console.log(notes));
+module.exports = new Database();
