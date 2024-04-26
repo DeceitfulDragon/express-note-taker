@@ -1,5 +1,5 @@
 const fs = require("fs");
-const utl = require("util");
+const util = require("util");
 var uniqid = require('uniqid');
 
 const readFile = util.promisify(fs.readFile);
