@@ -47,10 +47,8 @@ class Database {
 
     // Delete notes
     deleteNotes(id) {
-        return this.getNotes().then((notes) => {
-            const filteredNotes = notes.filter(note => note.id !== id);
-            return this.write(filteredNotes);
-        });
+        // find note by id
+        return this.getNotes().then(notes => this.write(notes.filter(note => note.id !== id)));
     }
 }
 
